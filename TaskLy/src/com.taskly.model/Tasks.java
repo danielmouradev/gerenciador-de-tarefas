@@ -33,6 +33,7 @@ public class Tasks {
     }
 
 
+    //Getter's e Setter's
 
     /**
      * @return int return the id
@@ -118,10 +119,12 @@ public class Tasks {
         this.completed = completed;
     }
 
+    //Métodos de comparar por data e por prioridade
     public void compareByDate(){}
 
     public void compareByPriority(){}
 
+    //Método toString
     @Override
     public String toString(){
         return "id: " + getId() + 
