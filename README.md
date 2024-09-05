@@ -1,7 +1,7 @@
 
 # GERENCIADOR DE TAREFAS
 
-Projeto para criação de um organizador que facilita o gerenciamento de tarefas, onde diversas funções auxiliam na adição, remoção e listagens de tarefas. 
+Projeto para criação de um organizador que facilita o gerenciamento de tarefas, onde diversas funções auxiliam na adição, remoção e listagens de tarefas com POO. 
 
 # FUNÇÕES 
 
