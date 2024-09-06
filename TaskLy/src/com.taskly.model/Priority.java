@@ -1,8 +1,7 @@
 package com.taskly.model;
 
-public enum Priority {
-
-    HIGH ("High"), 
+public enum Priority{
+    HIGH ("High"),
     AVERAGE ("Average"), 
     LOW ("Low"); 
 
@@ -33,3 +32,5 @@ public enum Priority {
     }
 
 }
+
+
