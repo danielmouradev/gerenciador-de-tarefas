@@ -15,11 +15,12 @@ public class TaskLyManager {
         TasksManager tasksManager = new TasksManager(); 
         Scanner sc = new Scanner(System.in); 
        
-        while (true) {
+        //while (true) {
             System.out.print("\n-------------------WELCOME TO APP TASKLY MANAGER------------------\n");
 
             System.out.println("## OPTIONS ##");
-
+            
+            //Imprimindo as opções
             System.out.println("Option 1: Add task");
             System.out.println("Option 2: List task");
             System.out.println("Option 3: Edit task");
@@ -32,6 +33,7 @@ public class TaskLyManager {
             int option = 0; 
 
             switch (option) {
+                //Caso seja escolhida a 1° opção: Adiciona uma nova tarefa
                 case 1:
                     System.out.print("Enter task id: ");
                     int id = sc.nextInt(); 
@@ -57,14 +59,41 @@ public class TaskLyManager {
                     tasksManager.addTask(tasks);
                     break;
                 
+                    //Caso a 2° opção: Lista as tarefas 
                 case 2: 
                     List<Tasks> tasks2 = tasksManager.listTasks(); 
                     for (Tasks task : tasks2) {
                         System.out.println(task);
                     }
+
+                    //Caso a 3° opção: Edita a tarefa
+                    case 3: 
+                     System.out.print("Enter the id to modify the task: ");
+                     id = sc.nextInt();
+                     if (id == tasks.getId()) {
+                        
+                        System.out.print("Enter the new task title: ");
+                        String newTitle = sc.nextLine(); 
+
+                        System.out.print("Enter the new task description: ");
+                        String newDescription = sc.nextLine();
+
+                        System.out.print("Enter the new task due date - (dd/mm/aaaa): ");
+                        String newDueDate1 = sc.nextLine(); 
+                        DateTimeFormatter newDateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy"); 
+                        LocalDate formatDateGeral = LocalDate.parse(newDueDate1, newDateFormat); 
+                        String dateFinal = dateFinal.format(formatDateGeral); 
+                        LocalDate newDueDate = dateFinal;
+
+                        System.out.println("NEW PRIORITY: (HIGH, AVERAGE, LOW)");
+                        sc newPriority1 = sc.nextLine(); 
+                        
+                        
+                    // }
+
                     break;
             
-                default:
+                //default:
                     break;
             }
 
