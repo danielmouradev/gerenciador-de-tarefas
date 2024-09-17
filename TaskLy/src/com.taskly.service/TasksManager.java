@@ -40,11 +40,11 @@ public class TasksManager {
         }
     }
 
-    private List<Tasks> listTasks(){
+    public List<Tasks> listTasks(){
         return tasks;
     }
 
-    private void markTask(int id){
+    public void markTask(int id){
         for (Tasks task : tasks) {
             if (task.getId() == id) {
                 task.setCompleted(true);
@@ -53,7 +53,7 @@ public class TasksManager {
         }
     }
 
-    private List<Tasks> filterByDate(LocalDate date){
+    public List<Tasks> filterByDate(LocalDate date){
         return tasks.stream()
         .filter(tasks -> tasks.getDueDate().equals(date))
         .collect(Collectors.toList());
