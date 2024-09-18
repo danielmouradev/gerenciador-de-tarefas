@@ -9,9 +9,12 @@ import com.taskly.model.Tasks;
 
 public class TaskLyManager {
     public static void main(String[] args) {
-        Tasks task = new Tasks();
-        TasksManager manager = new TasksManager(); 
+        TasksManager tasksManager = new TasksManager(); 
         Scanner sc = new Scanner(System.in);
+
+
+        System.out.println();
+
 
         while (true) {
             System.out.println("1. Add task");
@@ -24,10 +27,11 @@ public class TaskLyManager {
             System.out.println("8. Exit");
         
 
-        System.out.println("Enter option");
+        System.out.print("\nEnter option: ");
         int option = sc.nextInt(); 
         sc.nextLine();
         
+        System.out.println();
 
         switch (option) {
             case 1:
@@ -35,6 +39,7 @@ public class TaskLyManager {
                 int id = sc.nextInt();
 
                 System.out.print("Enter title: ");
+                sc.nextLine();
                 String title = sc.nextLine();
             
                 System.out.print("Enter description: ");
@@ -46,15 +51,23 @@ public class TaskLyManager {
                 LocalDate dueDate = LocalDate.parse(firstDate, format1);
 
                 System.out.print("Priority - (High, Average, Low): ");
-                String newPriority = sc.nextLine();
-                Priority priority = Priority.valueOf(newPriority.toUpperCase());
+                String priorityStr = sc.nextLine();
 
-                Tasks newTasks = new Tasks(id, title, description, dueDate, priority);
+                Priority priority = Priority.valueOf(priorityStr.toUpperCase());
 
-              System.out.println(task.toString());
+                Tasks task = new Tasks(id, title, description, dueDate, priority);
+
+                System.out.println(task.toString());
+                //tasksManager.addTask(task);
+
                 break;
         
-            default:
+
+
+                case 8: 
+                System.out.println("Até mais!");
+                sc.close();
+                System.exit(8);
                 break;
         }
     }

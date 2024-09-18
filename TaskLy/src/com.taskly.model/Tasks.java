@@ -17,10 +17,7 @@ public class Tasks {
         this.title = title; 
     }
 
-    //constructor without attributes
-    public Tasks(){}
 
-    
 
     //constructor with all attributes
     public Tasks(int id, String title, String description, LocalDate dueDate, Priority priority) {
