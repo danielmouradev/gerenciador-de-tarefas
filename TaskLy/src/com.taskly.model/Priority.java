@@ -8,7 +8,7 @@ public enum Priority{
     private String tipePriority; // Atributos
 
     //Construtores (vazio e com parâmetros)
-     Priority (){}; 
+    
      Priority (String tipePriority){
         this.tipePriority = tipePriority;
      }; 

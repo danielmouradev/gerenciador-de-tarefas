@@ -12,17 +12,16 @@ public class Tasks {
     private boolean completed;
 
     //constructors
-    public Tasks(int id, String title, String description, Priority priority, LocalDate dueDate,
-    boolean completed){
+    public Tasks(int id, String title, String description, Priority priority, LocalDate dueDate){
         this.id = id; 
         this.title = title; 
         this.description = description; 
         this.priority = priority; 
         this.dueDate = dueDate;
-        this.completed = completed;
+        this.completed = false;
     }
 
-    public Tasks(){}
+    
 
     
     //Getter's and Setter's
