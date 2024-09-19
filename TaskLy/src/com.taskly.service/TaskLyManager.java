@@ -40,10 +40,10 @@ public class TaskLyManager {
                 // Caso seja escolhida a 1° opção: Adiciona uma nova tarefa
                 case 1:
                     System.out.print("Enter task id: ");
-                    sc.nextLine();
                     int id = sc.nextInt();
 
                     System.out.print("Enter the task title: ");
+                    sc.nextLine();
                     String title = sc.nextLine();
 
                     System.out.print("Enter the task description: ");
@@ -51,15 +51,25 @@ public class TaskLyManager {
 
                     System.out.print("Enter due date - (dd/mm/aaaa): ");
                     String firstDate = sc.nextLine();
-                    DateTimeFormatter format1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-                    LocalDate dueDate = LocalDate.parse(firstDate, format1);
 
-                    System.out.println("PRIORITY: (HIGH, AVERAGE, LOW)");
+                    DateTimeFormatter formatAmerican = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+                    LocalDate date = LocalDate.parse(firstDate, formatAmerican);
+
+                    //String dateBrazilian = date.format(formatAmerican);
+
+                    LocalDate dueDate  = LocalDate.parse(date);
+                   
+
+
+
+                    System.out.print("PRIORITY: (HIGH, AVERAGE, LOW): ");
                     String priority1 = sc.nextLine();
                     Priority priority = Priority.valueOf(priority1.toUpperCase());
 
                     Tasks tasks = new Tasks(id, title, description, priority, dueDate);
                     tasksManager.addTask(tasks);
+                    System.out.println();
                     break;
 
                 case 8:
