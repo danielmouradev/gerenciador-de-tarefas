@@ -54,20 +54,14 @@ public class TaskLyManager {
 
                     DateTimeFormatter formatAmerican = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-                    LocalDate date = LocalDate.parse(firstDate, formatAmerican);
-
-                    //String dateBrazilian = date.format(formatAmerican);
-
-                    LocalDate dueDate  = LocalDate.parse(date);
-                   
-
-
-
-                    System.out.print("PRIORITY: (HIGH, AVERAGE, LOW): ");
-                    String priority1 = sc.nextLine();
-                    Priority priority = Priority.valueOf(priority1.toUpperCase());
+                    LocalDate dueDate = LocalDate.parse(firstDate, formatAmerican);
+            
+                        System.out.print("PRIORITY: (HIGH, AVERAGE, LOW): ");
+                        String priority1 = sc.nextLine();
+                        Priority priority = Priority.valueOf(priority1.toUpperCase());
 
                     Tasks tasks = new Tasks(id, title, description, priority, dueDate);
+                    
                     tasksManager.addTask(tasks);
                     System.out.println();
                     break;

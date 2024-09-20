@@ -2,7 +2,7 @@ package com.taskly.model;
 
 public enum Priority{
     HIGH ("High"),
-    AVERAGE ("Average"), 
+    AVERAGE ("Average"),
     LOW ("Low"); 
 
     private String tipePriority; // Atributos
@@ -10,8 +10,8 @@ public enum Priority{
     //Construtores (vazio e com parâmetros)
     
      Priority (String tipePriority){
-        this.tipePriority = tipePriority;
-     }; 
+        this.tipePriority = tipePriority; 
+     }
 
 
      //Getter's e Setter's
@@ -23,10 +23,10 @@ public enum Priority{
 
     
     public void setTipePriority(String tipePriority) {
-        this.tipePriority = tipePriority;
+            this.tipePriority = tipePriority; 
     }
 
-    //Para deixar a palvra maiúscula
+    //Para deixar a palavra maiúscula
     public String getTyppCapital(){
         return tipePriority.toUpperCase();
     }
