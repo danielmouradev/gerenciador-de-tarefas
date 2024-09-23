@@ -58,7 +58,7 @@ public class TaskLyManager {
             
                         System.out.print("PRIORITY: (HIGH, AVERAGE, LOW): ");
                         String priority1 = sc.nextLine();
-                        Priority priority = Priority.valueOf(priority1.toUpperCase());
+                        Priority priority = Priority.valueOf(priority1.trim().toUpperCase());
 
                     Tasks tasks = new Tasks(id, title, description, priority, dueDate);
                     
