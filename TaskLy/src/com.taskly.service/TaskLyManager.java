@@ -66,6 +66,39 @@ public class TaskLyManager {
                     System.out.println();
                     break;
 
+                case 2: 
+                List<Tasks> listTasks1 = tasksManager.listTasks();
+                for (Tasks task : listTasks1) {
+                    System.out.println(task);
+                }
+                break;
+
+                case 3: 
+                System.out.print("Enter task id: ");
+                 id = sc.nextInt();
+
+                System.out.println("Enter the task new title: ");
+                sc.nextLine();
+                String newTitle = sc.nextLine(); 
+
+                System.out.println("Enter the task new description: ");
+                String newDescription = sc.nextLine();
+
+                System.out.print("Enter new due date - (dd/mm/aaaa): ");
+                String newFirstDate = sc.nextLine();
+
+                DateTimeFormatter formatAmerican2 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+                LocalDate newDueDate = LocalDate.parse(newFirstDate, formatAmerican2);
+
+
+                System.out.print("PRIORITY: (HIGH, AVERAGE, LOW): ");
+                String priority2 = sc.nextLine();
+                Priority newPriority = Priority.valueOf(priority2.trim().toUpperCase());
+
+                Tasks tasks2 = new Tasks(id, newTitle, newDescription, newPriority, newDueDate);
+                tasksManager.editTask(id, tasks2);
+
                 case 8:
                     System.out.println("Até mais!");
                     sc.close();

@@ -23,6 +23,11 @@ public class Tasks {
 
     
 
+    public String toString(){
+        return "Id: " + getId() + "\nTitle: " + 
+        getTitle() + "\nDescription: " + getDescription() + 
+        "\nPriority: " + getPriority() + "\nDue date: " + getDueDate();
+    }
     
     //Getter's and Setter's
     public int getId() {
