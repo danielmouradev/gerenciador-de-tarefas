@@ -77,11 +77,11 @@ public class TaskLyManager {
                 System.out.print("Enter task id: ");
                  id = sc.nextInt();
 
-                System.out.println("Enter the task new title: ");
+                System.out.print("Enter the task new title: ");
                 sc.nextLine();
                 String newTitle = sc.nextLine(); 
 
-                System.out.println("Enter the task new description: ");
+                System.out.print("Enter the task new description: ");
                 String newDescription = sc.nextLine();
 
                 System.out.print("Enter new due date - (dd/mm/aaaa): ");
@@ -95,9 +95,16 @@ public class TaskLyManager {
                 System.out.print("PRIORITY: (HIGH, AVERAGE, LOW): ");
                 String priority2 = sc.nextLine();
                 Priority newPriority = Priority.valueOf(priority2.trim().toUpperCase());
-
+                
                 Tasks tasks2 = new Tasks(id, newTitle, newDescription, newPriority, newDueDate);
-                tasksManager.editTask(id, tasks2);
+                break;
+
+
+                case 4: 
+                System.out.print("Enter task id: ");
+                id = sc.nextInt();
+                tasksManager.removeTask(id);
+                break;
 
                 case 8:
                     System.out.println("Até mais!");
